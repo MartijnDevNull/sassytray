@@ -16,8 +16,9 @@ class CPUTimer:
     def timer_callback(self):
         cpu_temp = self.get_CPU_Heat()
         print 'update CPU: ' + cpu_temp
-        print self.get_icon_name(int(cpu_temp))
+        icon_name = self.get_icon_name(int(cpu_temp))
         self.tray.set_tooltip(('CPU: ' + cpu_temp))
+        self.tray.set_from_file("/home/martijn/repositories/sassytray/icons/" + icon_name + ".svg")
         return True
 
     def get_CPU_Heat(self):
@@ -25,13 +26,13 @@ class CPUTimer:
 
     def get_icon_name(self, heat):
         if heat < 30:
-            return "cpu_cold"
+            return "cold_cpu"
         if heat < 50:
-            return "cpu_med"
+            return "med_cpu"
         if heat < 55:
-            return "cpu_hot"
+            return "hot_cpu"
         if heat < 65:
-            return "cpu_flame"
+            return "flame_cpu"
         else:
             return "didn't catogorize heat"
 
