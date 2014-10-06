@@ -4,6 +4,7 @@
 import gtk, gobject, os
 
 TIMER = 2
+DEBUG = True
 
 class CPUTimer:
     def __init__(self, timeout):
@@ -15,10 +16,10 @@ class CPUTimer:
 
     def timer_callback(self):
         cpu_temp = self.get_CPU_Heat()
-        print 'update CPU: ' + cpu_temp
+        self.debug('update CPU: ' + cpu_temp)
         icon_name = self.get_icon_name(int(cpu_temp))
         self.tray.set_tooltip(('CPU: ' + cpu_temp))
-        self.tray.set_from_file("/home/martijn/repositories/sassytray/icons/" + icon_name + ".svg")
+        self.tray.set_from_file("icons/" + icon_name + ".svg")
         return True
 
     def get_CPU_Heat(self):
@@ -36,6 +37,9 @@ class CPUTimer:
         else:
             return "didn't catogorize heat"
 
+    def debug(self, mesg):
+        if DEBUG is True:
+            print mesg
 if __name__ == '__main__':
     # The update interval for CPUTimer
     timer = CPUTimer(TIMER) 
