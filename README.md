@@ -10,3 +10,8 @@ To install:
 $ git clone https://github.com/MartijnDevNull/sassytray.git
 # make install
 ```
+
+Screenshot
+----------
+
+![alt tag](https://raw.githubusercontent.com/MartijnDevNull/sassytray/master/image_inbar.png)
