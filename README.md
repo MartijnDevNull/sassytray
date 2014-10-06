@@ -8,6 +8,7 @@ Also influenced by https://github.com/letalvoj/tidybattery
 To install:
 ```
 $ git clone https://github.com/MartijnDevNull/sassytray.git
+$ cd sassytray
 # make install
 ```
 
