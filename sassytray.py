@@ -4,7 +4,7 @@
 import gtk, gobject, os
 
 TIMER = 2
-DEBUG = True
+DEBUG = False
 LAST_STATUS = ""
 
 class CPUTimer:
@@ -45,7 +45,7 @@ class CPUTimer:
             return "didn't catogorize heat"
 
     def debug(self, mesg):
-        if DEBUG is True:
+        if DEBUG == True:
             print mesg
 if __name__ == '__main__':
     timer = CPUTimer(TIMER) 
